@@ -68,5 +68,23 @@ set_target_properties(GameEngineEditor PROPERTIES
             CXX_STANDARD 17
             )
 
+add_custom_command(TARGET ${PROJECT_NAME}  POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+                ${CMAKE_CURRENT_SOURCE_DIR}/bin/Autoload
+                ${CMAKE_CURRENT_BINARY_DIR}/Autoload
+)
+
+add_custom_command(TARGET ${PROJECT_NAME}  POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+                ${CMAKE_CURRENT_SOURCE_DIR}/bin/CoreData
+                ${CMAKE_CURRENT_BINARY_DIR}/CoreData
+)
+
+add_custom_command(TARGET ${PROJECT_NAME}  POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+                ${CMAKE_CURRENT_SOURCE_DIR}/bin/Data
+                ${CMAKE_CURRENT_BINARY_DIR}/Data
+)
+
 
 # TODO: Add tests and install targets if needed.

@@ -444,3 +444,6 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 build
+
+# Dont ignore specific folders for editor
+!GameEngineEditor/*/bin
